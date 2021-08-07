@@ -12,12 +12,10 @@ fn main() {
 
     let measurements = bme280.measure().unwrap();
 
-    println!("{:?}", args);
-
     match args[1].as_str() {
-        "temp" => println!("{}", measurements.temperature),
-        "pressure" => println!("{}", measurements.pressure),
-        "humidity" => println!("{}", measurements.humidity),
+        "temp" => println!("{:.2}", measurements.temperature),
+        "pressure" => println!("{:.2}", measurements.pressure),
+        "humidity" => println!("{:.2}", measurements.humidity),
         _ => {}
     }
 }
